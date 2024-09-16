@@ -1,0 +1,38 @@
+<svg width="47" height="27" viewBox="0 0 47 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_1152_28)">
+<path d="M0 0H46.6688V26.0268H0V0Z" fill="#255A9F"/>
+</g>
+<g clip-path="url(#clip0_1152_28)">
+<g style="mix-blend-mode:plus-lighter" filter="url(#filter1_f_1152_28)">
+<ellipse cx="60.2597" cy="32.4635" rx="45.6796" ry="10.5924" fill="#A1D7FF"/>
+</g>
+<g style="mix-blend-mode:plus-lighter" filter="url(#filter2_f_1152_28)">
+<ellipse cx="-6.15832" cy="-8.03654" rx="45.6796" ry="10.5924" fill="#A1D7FF"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_1152_28" x="0" y="0" width="46.668" height="26.0273" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="9.90289"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.4 0 0 0 0 0.784314 0 0 0 0 1 0 0 0 0.5 0"/>
+<feBlend mode="plus-lighter" in2="shape" result="effect1_innerShadow_1152_28"/>
+</filter>
+<filter id="filter1_f_1152_28" x="-0.514045" y="6.77697" width="121.548" height="51.3718" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="7.54706" result="effect1_foregroundBlur_1152_28"/>
+</filter>
+<filter id="filter2_f_1152_28" x="-66.932" y="-33.723" width="121.548" height="51.3718" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="7.54706" result="effect1_foregroundBlur_1152_28"/>
+</filter>
+<clipPath id="clip0_1152_28">
+<rect width="46.67" height="26.03" fill="white"/>
+</clipPath>
+</defs>
+</svg>
