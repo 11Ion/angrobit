@@ -46,21 +46,14 @@ window.addEventListener('load', (e) => {
             model = gltf.scene;
             model.position.set(0, -5.5, 0);
             model.scale.set(2.5, 2.5, 2.5);
-            scene.add(model);
-
-
 
             model.traverse((child) => {
-
-
-                if (child.isMesh && child.material) {
-
+                if (child.name === 'Object_68') { 
                     console.log(child.material)
+                    child.material.emissive.set(colorUpdate()); 
                 }
             });
-
-
-    
+            scene.add(model);
         },
         undefined,
         (error) => {
@@ -133,8 +126,8 @@ window.addEventListener('load', (e) => {
                 const color = object.getAttribute('data-color');
                 if (model) {
                     model.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material.color.set(colorUpdate(color)); // Set color
+                        if (child.name === 'Object_68') { 
+                            child.material.emissive.set(colorUpdate(color)); 
                         }
                     });
                 }
@@ -154,8 +147,8 @@ window.addEventListener('load', (e) => {
             const color = object.getAttribute('data-color');
             if (model) {
                 model.traverse((child) => {
-                    if (child.isMesh) {
-                        child.material.color.set(colorUpdate(color));
+                    if (child.name === 'Object_68') { 
+                        child.material.emissive.set(colorUpdate(color)); 
                     }
                 });
             }
