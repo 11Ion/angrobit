@@ -5,6 +5,22 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 window.addEventListener('load', (e) => {
 
+
+    // load preview elements animation
+    {
+        const contentElement = document.querySelector(".preview_content");
+        const lightElement = document.querySelector(".preview_light_element");
+        function animatePreview(content, light){
+            if(content && light){
+                light.style.opacity = 1;
+                setTimeout(function(){
+                    content.style.opacity = 1;
+                }, 500);
+            }
+        };
+        animatePreview(contentElement, lightElement);
+    }
+
     const colorUpdate = (color) => {
         switch (color) {
             case 'white':
@@ -24,9 +40,71 @@ window.addEventListener('load', (e) => {
         }
     };
 
+    // Functie pentru animatie lina de rotire (pentru oricare axa)
+    function animateRotation(child, startRotation, endRotation, duration, axis = 'x') {
+    const startTime = performance.now();
+
+    function update() {
+        const currentTime = performance.now();
+        const elapsed = (currentTime - startTime) / duration;
+        if (elapsed < 1) {
+            const currentRotation = startRotation + (endRotation - startRotation) * easeInOut(elapsed);
+            if (axis === 'x') {
+                child.rotation.x = currentRotation;
+            } else if (axis === 'y') {
+                child.rotation.y = currentRotation;
+            }
+            requestAnimationFrame(update); 
+        } else {
+            if (axis === 'x') {
+                child.rotation.x = endRotation; 
+            } else if (axis === 'y') {
+                child.rotation.y = endRotation; 
+            }
+        }
+    }
+    
+    update();
+    }
+
+    function resetOtherParts() {
+        model.traverse((child) => {
+            if (child.name === 'RightHand_38_43') { 
+                // child.rotation.y = 0;
+                const startRotation = 2; 
+                const endRotation = 0;  
+                const duration = 1000;  
+                animateRotation(child, startRotation, endRotation, duration, 'y');
+
+            }
+            if (child.name === 'RightArm_40_45') { 
+                // child.rotation.x = Math.PI / 3;
+                const startRotation = Math.PI / 4.5; 
+                const endRotation = Math.PI / 3;
+                const duration = 1000;
+    
+                animateRotation(child, startRotation, endRotation, duration, 'x');
+            }
+            if (child.name === 'RightForeArm_39_44') { 
+                // child.rotation.x  =  0;
+                const startRotation = -1.5; 
+                const endRotation = 0;
+                const duration = 1000;
+    
+                animateRotation(child, startRotation, endRotation, duration, 'x');
+            }
+
+        });
+    }
+
+    // Functie de easing pentru animatie lina
+    function easeInOut(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+        
     // Set up the scene
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 300 / 600, 0.5, 1000);
+    const camera = new THREE.PerspectiveCamera(75, 400 / 900, 0.5, 1000);
     camera.position.z = 4;
     camera.position.x = 21;
     const canvas = document.querySelector('.model');
@@ -41,26 +119,86 @@ window.addEventListener('load', (e) => {
     let model;
     const loader = new GLTFLoader();
     loader.load(
-        'assets/models/mannequin2/scene.gltf',
+        'assets/models/mannequin/scene.gltf',
         (gltf) => {
             model = gltf.scene;
             model.position.set(0, -5.5, 0);
             model.scale.set(2.5, 2.5, 2.5);
-            scene.add(model);
-
-
 
             model.traverse((child) => {
+                // console.log(child.name)
 
-
-                if (child.isMesh && child.material) {
-
-                    console.log(child.material)
+                if (child.name === 'Object_68') { 
+                    // console.log(child.material)
+                    child.material.emissive.set(colorUpdate()); 
+                }
+                if (child.name === 'LeftArm_21_26') { 
+                    child.rotation.x = Math.PI / 3;
+                }
+                if (child.name === 'RightArm_40_45') { 
+                    child.rotation.x = Math.PI / 3;
+                }
+                if (child.name === 'Object_66') { 
+                    child.visible = false;
+                }
+                if (child.name === 'HololensOpaque_opaque_0001_62') { 
+                    child.visible = false;
                 }
             });
+            scene.add(model);
 
+            let clicked = false; // Flag pentru a preveni declanșarea repetată a animației
 
-    
+            canvas.addEventListener("click", () => {
+                if (clicked) return; // Dacă animația este în curs, ieșim din funcție
+            
+                clicked = true; // Setăm flag-ul pentru a indica că animația a început
+            
+                model.traverse((child) => {
+                    if (child.name === 'RightForeArm_39_44') {
+                        const startRotation = -1.5;
+                        const endRotation = -2.2; 
+                        const duration = 1000; 
+                        const cycles = 2; 
+                        const totalDuration = duration * cycles * 2; 
+                        let startTime = performance.now();
+                        
+                        function animate() {
+                            const elapsed = performance.now() - startTime;
+                            const progress = (elapsed % duration) / duration;
+                            const oscillation = Math.sin(progress * Math.PI * 2);
+                            child.rotation.x = startRotation + (endRotation - startRotation) * (0.5 * (oscillation + 1));
+            
+                            if (elapsed < totalDuration) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                child.rotation.x = startRotation; // Resetăm poziția la final
+                                resetOtherParts(); // Resetăm și celelalte părți
+                                clicked = false; // Resetăm flag-ul pentru a permite noi click-uri
+                            }
+                        }
+            
+                        animate();
+                    }
+            
+                    if (child.name === 'RightHand_38_43') { 
+                        const startRotationY = child.rotation.y; 
+                        const endRotationY = 2;  
+                        const duration = 1000;  
+            
+                        animateRotation(child, startRotationY, endRotationY, duration, 'y'); 
+                    }
+            
+                    if (child.name === 'RightArm_40_45') { 
+                        const startRotation = child.rotation.x; 
+                        const endRotation = Math.PI / 4.5; 
+                        const duration = 1000;
+            
+                        animateRotation(child, startRotation, endRotation, duration, 'x');
+                    }
+                });
+            });
+            
         },
         undefined,
         (error) => {
@@ -75,8 +213,11 @@ window.addEventListener('load', (e) => {
     controls.minPolarAngle = Math.PI / 2;
     controls.maxPolarAngle = Math.PI / 2;
     controls.enableZoom = false;  
+    // controls.enableRotate = false; // Dezactivează rotația camerei
     controls.minDistance = 10;  
     controls.maxDistance = 10;
+
+    
 
     function animate() {
         requestAnimationFrame(animate);
@@ -97,15 +238,16 @@ window.addEventListener('load', (e) => {
     let angle = 0;
     let isAnimating = true;
     let targetAngle = null;
-    let rotationSpeed = 0.01;
+    let rotationSpeed = 0.005;
     let clickActive = false;
-    let clickTimeout;
+    // let clickTimeout;
     let currentIndex = 0;
 
     function updateCarousel(currentIndex) {
         const offset = -currentIndex * 100;
         carousel.style.transform = `translateX(${offset}%)`;
     }
+
 
     function rotateHorizontal() {
         if (isAnimating) {
@@ -127,15 +269,25 @@ window.addEventListener('load', (e) => {
             const z = Math.sin(offsetAngle) * 300;
 
             object.style.transform = `translateX(${x}px) translateZ(${z}px) translateY(${y}px)`;
-            object.style.zIndex = Math.round(z + 10);
+            object.style.zIndex = Math.round(z + 5);
 
             if (Math.abs(x) < 1 && z > 0 && !clickActive) {
                 const color = object.getAttribute('data-color');
                 if (model) {
                     model.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material.color.set(colorUpdate(color)); // Set color
+                        if (child.name === 'Object_68') { 
+                            child.material.emissive.set(colorUpdate(color)); 
                         }
+                        if (child.name === 'LeftArm_21_26') { 
+                            // child.rotation.x = Math.PI / 2.7;
+                            // animateRotation(child, Math.PI / 3); 
+    
+                        }
+                        if (child.name === 'RightArm_40_45') { 
+                            // child.rotation.x = Math.PI / 2.7;
+                            // animateRotation(child, Math.PI / 3); 
+                        }
+
                     });
                 }
                 currentIndex = object.getAttribute('data-index');
@@ -150,20 +302,29 @@ window.addEventListener('load', (e) => {
         object.addEventListener('click', () => {
             clickActive = true;
             const objectIndex = Array.from(objects).indexOf(object);
-            targetAngle = -((objectIndex - 1.5) * (Math.PI / 3));
+            targetAngle = -((objectIndex - 1.45) * (Math.PI / 3));
             const color = object.getAttribute('data-color');
             if (model) {
                 model.traverse((child) => {
-                    if (child.isMesh) {
-                        child.material.color.set(colorUpdate(color));
+                    if (child.name === 'Object_68') { 
+                        child.material.emissive.set(colorUpdate(color)); 
+                    }
+                    if (child.name === 'LeftArm_21_26') { 
+                        // child.rotation.x = Math.PI / 2.7;
+                        // animateRotation(child, Math.PI / 2.7); 
+
+                    }
+                    if (child.name === 'RightArm_40_45') { 
+                        // child.rotation.x = Math.PI / 2.7;
+                        // animateRotation(child, Math.PI / 2.7); 
                     }
                 });
             }
             currentIndex = object.getAttribute('data-index');
             updateCarousel(currentIndex);
-            clickTimeout = setTimeout(() => {
-                clickActive = false;
-            }, 1500);
+            // clickTimeout = setTimeout(() => {
+            //     clickActive = false;
+            // }, 3000);
         });
     });
 

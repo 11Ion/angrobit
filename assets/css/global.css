@@ -1,6 +1,5 @@
-:root{
-    --font-family: "Saira", sans-serif;
+:root {
+    --font-family: "Work Sans", sans-serif;
+    --second-family: "Saira", sans-serif;
     --third-family: "Roboto", sans-serif;
-    --font-family3: "Work Sans", sans-serif;
-    --color-dark-blue: #0D2940;
-}
+  }

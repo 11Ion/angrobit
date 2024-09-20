@@ -4,4 +4,3 @@ Start commands in terminal:
 
 - npm install three
 - npx vite
-- vite

@@ -1,0 +1,31 @@
+{
+    "users": [
+        {   
+            "id": "1",
+            "username": "Magamed",
+            "image": "https://cdn.prod.website-files.com/5e0e21dc3d017434b73b2cff/5ef710afc93f2ab8ed2923be_Linkedin_Profile_Example.jpg",
+            "level": 21,
+            "balance1": 2000,
+            "balance2": 9999
+        }
+    ],
+
+    "products": [
+        {   
+            "id": "1",
+            "name": "Name",
+            "image": "https://cdn.prod.website-files.com/5e0e21dc3d017434b73b2cff/5ef710afc93f2ab8ed2923be_Linkedin_Profile_Example.jpg",
+            "price": 32,
+            "colors": ["white", "black", "blue", "red"],
+            "sizing": ["XS", "S", "M", "L", "XL", "2XL"],
+            "material": "100% Pure Cotton",
+            "benefis": {
+                "1": "Soft & comofortable", "2": "durable", "3":"3", "4":"4"
+            },
+            "description": "...."
+        }
+    ]
+
+}
+
+
