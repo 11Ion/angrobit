@@ -5,11 +5,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="./assets/css/global.css">
-      <link rel="stylesheet" href="./assets/css/main.css">
-      <link rel="stylesheet" href="./assets/css/reset.css">
-      <link rel="stylesheet" href="./assets/css/responsive.css">
+      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../../assets/css/global.css">
+      <link rel="stylesheet" href="../../assets/css/main.css">
+      <link rel="stylesheet" href="./catalog.css">
+      <link rel="stylesheet" href="../../assets/css/reset.css">
+      <link rel="stylesheet" href="../../assets/css/responsive.css">
       <title>AngroBit Shop</title>
    </head>
    <body>
@@ -25,7 +26,7 @@
             <nav class="nav">
                <div class="logo">
                   <a href="#">
-                  <img src="./assets/images/home/logo.svg" alt="Logo AngroBit">
+                  <img src="../../assets/images/home/logo.svg" alt="Logo AngroBit">
                   </a>
                </div>
                <div class="nav_search">
@@ -53,7 +54,7 @@
                   </a>
                </div>
                <ul class="items">
-                  <li class="item active">
+                  <li class="item">
                      <a href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
                            <g filter="url(#filter0_d_9_6317)">
@@ -103,7 +104,7 @@
                         New in
                      </a>
                   </li>
-                  <li class="item">
+                  <li class="item active">
                      <a href="/pages/catalog/catalog.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
                            <g filter="url(#filter0_d_47_4750)">
@@ -223,78 +224,312 @@
                </div>
             </div>
 
-            <div class="top_light"></div>
-            <!-- 3D SCENE -->
-            <div class="scene">
-               <canvas class="model"></canvas>
-               <div class="rotating_object" data-color="white" data-index="0">
-                  <img src="./assets/images/home/circle_shirt1.png" alt="T-shirt white" draggable="false">
-               </div>
-               <div class="rotating_object" data-color="black" data-index="1">
-                  <img src="./assets/images/home/circle_shirt2.png" alt="T-shirt black" draggable="false">
-               </div>
-               <div class="rotating_object" data-color="yellow" data-index="2">
-                  <img src="./assets/images/home/circle_shirt3.png" alt="T-shirt yellow" draggable="false">
-               </div>
-               <div class="rotating_object" data-color="green" data-index="3">
-                  <img src="./assets/images/home/circle_shirt4.png" alt="T-shirt green" draggable="false">
-               </div>
-               <div class="rotating_object" data-color="purple" data-index="4">
-                  <img src="./assets/images/home/circle_shirt5.png" alt="T-shirt purple" draggable="false">
-               </div>
-               <div class="rotating_object" data-color="burlywood" data-index="5">
-                  <img src="./assets/images/home/circle_shirt6.png" alt="T-shirt burlywood" draggable="false">
-               </div>
-            </div>
-            <div class="bottom_light"></div>
-            <div class="bottom_ground"></div>
-
-            <!-- PREVIEW SLIDER -->
-            <div class="preview">
-               <div class="preview_content">
+            <!-- CATALOG -->
+             <section class="catalog">
                   <div class="border border_top_left"></div>
                   <div class="border border_top_right"></div>
                   <div class="border border_bottom_left"></div>
                   <div class="border border_bottom_right"></div>
-                  <h2 class="title">T-shirt</h2>
-                  <div class="container_carousel">
-                     <div class="carousel">
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt1.png" alt="T-shirt white">
+
+                  <div class="content">
+                     <div class="fitlers">
+                        <div class="filter_product_type">
+                           <label for="product_type">
+                              <img src="../../assets/images/catalog/icon_tshirt.svg" alt="T-shirt" />
+                           </label>
+                           <select name="product_type" id="product_type">
+                              <option value="T-shirt" checked="">T-shirts</option>
+                              <option value="1">T-1</option>
+                              <option value="2">T-2</option>
+                              <option value="3">T-3</option>
+                           </select>
                         </div>
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt2.png" alt="T-shirt black">
-                        </div>
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt3.png" alt="T-shirt yellow">
-                        </div>
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt4.png" alt="T-shirt green">
-                        </div>
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt5.png" alt="T-shirt purple">
-                        </div>
-                        <div class="carousel_slide">
-                           <img src="./assets/images/home/shirt6.png" alt="T-shirt burlywood">
+
+                        <div class="filter_product_found">
+                              <form class="filter_search" action="#">
+                                 <input type="search" placeholder="Search">
+                                 <button class="button" type="submit">
+                                    <img src="../../assets/images/catalog/icon_search.svg" alt="Icon search" />
+                                 </button>
+                              </form>
+                              <div class="filter_settings">
+                                 <button class="button">
+                                    <img src="../../assets/images/catalog/icon_settings.svg" alt="Settings" title="Settings">
+                                 </button>
+                              </div>
                         </div>
                      </div>
-                  </div>
-                  <button class="button">
-                     <span class="content">
-                        <span class="text">PREVIEW</span>
-                        <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M-0.000244141 13.117C-0.000244141 13.8621 0.952428 14.271 1.58398 13.797L9.59226 7.78661C10.1356 7.37883 10.1356 6.62125 9.59226 6.21347L1.58385 0.203002C0.952348 -0.270949 -0.000244141 0.137909 -0.000244141 0.882902C-0.000244141 1.02401 0.0369841 1.16305 0.108309 1.28834L3.09292 6.53091C3.26037 6.82504 3.26037 7.17487 3.09292 7.469L0.108318 12.7116C0.0369871 12.8369 -0.000244141 12.9759 -0.000244141 13.117Z" fill="white" />
-                         </svg>
-                     </span>
-                  </button>
-               </div>
-               <div class="preview_light_element"></div>
-               <div class="preview_bottom_element"></div>
-            </div>
+                     <div class="line"></div>
+                     <!-- ONGOING -->
+                      <div class="ongoing">
+                           Ongoing
+                      </div>
+                      <div class="sort">
+                        Ongoing sort
+                      </div>
+                      <!-- PRODUCTS -->
+                       <div class="products">
+                           <article class="product">
+                              <div class="product_content">
+                                 <button class="button_add_to_favorite">
+                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
+                                 </button>
+                                 <div class="product_image">
+                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
+                                 </div>
 
+                                 <div class="product_colors">
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name1" checked="">
+                                     <span class="check"></span>
+                                   </label>
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name1">
+                                     <span class="check"></span>
+                                   </label>
+                                 </div>
+                                 
+                                 <h2 class="product_name">
+                                    T-shirt
+                                    <div class="shadow"></div>
+                                 </h2>
+                              </div>
+
+                              <button class="button_buy">
+                                 $ 36.02
+                              </button>
+
+                           </article>
+
+                           <article class="product">
+                              <div class="product_content">
+                                 <button class="button_add_to_favorite">
+                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
+                                 </button>
+                                 <div class="product_image">
+                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
+                                 </div>
+
+                                 <div class="product_colors">
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name2" checked="">
+                                     <span class="check"></span>
+                                   </label>
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name2">
+                                     <span class="check"></span>
+                                   </label>
+                                 </div>
+                                 
+                                 <h2 class="product_name">
+                                    T-shirt
+                                    <div class="shadow"></div>
+                                 </h2>
+                              </div>
+
+                              <button class="button_buy">
+                                 $ 36.02
+                              </button>
+
+                           </article>
+                           <article class="product">
+                              <div class="product_content">
+                                 <button class="button_add_to_favorite">
+                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
+                                 </button>
+                                 <div class="product_image">
+                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
+                                 </div>
+
+                                 <div class="product_colors">
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name3" checked="">
+                                     <span class="check"></span>
+                                   </label>
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name3">
+                                     <span class="check"></span>
+                                   </label>
+                                 </div>
+                                 
+                                 <h2 class="product_name">
+                                    T-shirt
+                                    <div class="shadow"></div>
+                                 </h2>
+                              </div>
+
+                              <button class="button_buy">
+                                 $ 36.02
+                              </button>
+
+                           </article>
+                           <article class="product">
+                              <div class="product_content">
+                                 <button class="button_add_to_favorite">
+                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
+                                 </button>
+                                 <div class="product_image">
+                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
+                                 </div>
+
+                                 <div class="product_colors">
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name4" checked="">
+                                     <span class="check"></span>
+                                   </label>
+                                   <label class="label">
+                                     <input type="radio" name="color_product_name4">
+                                     <span class="check"></span>
+                                   </label>
+                                 </div>
+                                 
+                                 <h2 class="product_name">
+                                    T-shirt
+                                    <div class="shadow"></div>
+                                 </h2>
+                              </div>
+
+                              <button class="button_buy">
+                                 $ 36.02
+                              </button>
+
+                           </article>
+                       </div>
+
+                  </div>
+             </section>
+
+             <!-- SCENE3D -->
+              <div class="catalog_preview_model">
+                  <div class="content_details">
+                     <p class="price">$ 35.02</p>
+                     <div class="buttons">
+                        <button class="button_details" id="handleDetails">Details</button>
+                        <button class="button_buy">Buy</button>
+                     </div>
+                  </div>
+              </div>
+              <div class="ground"></div>
+
+              <!-- TEMP POP-UP PREVIEW PRODUCT -->
+               <div class="preview_product">
+                  <div class="mask"></div>
+                  <div class="content" id="content_popup">
+                     <button class="button_close">
+                           <img src="../../assets/images/catalog/icon_close.svg" alt="close" title="Exit">
+                     </button>
+                     <div class="left_box">
+                        <div class="bottom_light"></div>
+                        <div class="ground"></div>
+                        <button class="button_add_to_cart">
+                           ADD TO CARD
+                        </button>
+                     </div>
+                     <div class="right_box">
+                        <div class="product_details_header">
+                           <div class="left_content">
+                              <div class="container_image">
+                                 <img src="../../assets/images/home/shirt1.png" alt="T-shirt">
+                              </div>
+                              <h2 class="product_name">
+                                 t-shirt
+                              </h2>
+                           </div>
+                           <div class="right_content">
+                              <p class="price">$ 35.02</p>
+                              <button class="button_buy">buy</button>
+                           </div>
+                           <div class="line"></div>
+                        </div>
+                        <div class="product_sizing">
+                           <h3 class="title">
+                              Size
+                           </h3>
+                           <div class="sizing_inputs">
+                              <p class="subtitle_sizing_inputs">Sizing Chart</p>
+                              <label>
+                                 <input type="radio" name="size" checked="">
+                                 <span class="name"><span class="bg">XS</span></span>
+                              </label>
+                              <label>
+                                 <input type="radio" name="size">
+                                 <span class="name"> <span class="bg">S</span></span>
+                              </label>
+                              <label>
+                                 <input type="radio" name="size">
+                                 <span class="name"><span class="bg">M</span></span>
+                              </label>
+                              <label>
+                                 <input type="radio" name="size">
+                                 <span class="name"><span class="bg">XL</span></span>
+                                 
+                              </label>
+                              <label>
+                                 <input type="radio" name="size">
+                                 <span class="name"><span class="bg">2XL</span></span>
+                              </label>
+                           </div>
+                        </div>
+                        <div class="product_description">
+                           <h4 class="title">
+                              Description
+                           </h4>
+                           <div class="content_description">
+                              <div class="content_color">
+                                 <h5 class="title_color">
+                                    Color
+                                 </h5>
+                                 <ul class="items">
+                                    <li class="item white"></li>
+                                    <li class="item black"></li>
+                                    <li class="item blue"></li>
+                                    <li class="item red"></li>
+                                 </ul>
+                              </div>
+
+                              <div class="content_material">
+                                 <h5 class="title_material">
+                                    Material
+                                 </h5>
+                                 <div class="box">
+                                    <div class="image_material"></div>
+                                    <div class="name_material">100% Pure Cotton</div>
+                                 </div>
+                              </div>
+
+                              <div class="content_benefis">
+                                 <h5 class="title_benefis">
+                                    Benefits
+                                 </h5>
+                                 <ul class="items">
+                                    <li class="item">
+                                       <img class="icon" src="../../assets/images/catalog/icon_soft.svg" alt="Soft & Comfortable">
+                                       <span>Soft & Comfortable</span>
+                                    </li>
+                                    <li class="item">
+                                       <img class="icon" src="../../assets/images/catalog/icon_durable.svg" alt="Durable">
+                                       <span>Durable</span>
+                                    </li>
+                                    <li class="item">
+                                       <img class="icon" src="../../assets/images/catalog/breathable.svg" alt="Breathable">
+                                       <span>Breathable</span>
+                                    </li>
+                                    <li class="item">
+                                       <img class="icon" src="../../assets/images/catalog/versatile_icon.svg" alt="Versatile Style">
+                                       <span>Versatile Style</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+
+                        
+                     </div>
+                  </div>
+               </div>
          </main>
       </div>
-      <script src="./assets/js/api.js"></script>
-      <script type="module" src="./assets/js/main.js"></script>
+      <script src="../../assets/js/api.js"></script>
+      <script type="module" src="../../assets/js/main.js"></script>
    </body>
 </html>

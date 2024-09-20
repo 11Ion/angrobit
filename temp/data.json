@@ -11,18 +11,33 @@
     ],
 
     "products": [
-        {   
-            "id": "1",
-            "name": "Name",
-            "image": "https://cdn.prod.website-files.com/5e0e21dc3d017434b73b2cff/5ef710afc93f2ab8ed2923be_Linkedin_Profile_Example.jpg",
-            "price": 32,
-            "colors": ["white", "black", "blue", "red"],
-            "sizing": ["XS", "S", "M", "L", "XL", "2XL"],
-            "material": "100% Pure Cotton",
-            "benefis": {
-                "1": "Soft & comofortable", "2": "durable", "3":"3", "4":"4"
-            },
-            "description": "...."
+        {
+            "id": "29",
+            "name": "ProductNames",
+            "description": "Description",
+            "category_id": "Sports & Outdoors",
+            "brand_id": "Brands",
+            "price": "4243",
+            "compare_at_price": "",
+            "cost_per_item": null,
+            "quantity": null,
+            "sku": null,
+            "selling_type": null,
+            "status": null,
+            "image": null,
+            "weight": null,
+            "created_at": "2024-09-13 21:40:52",
+            "search_terms": null,
+            "size": "10",
+            "color": "#000000",
+            "btn_radio12": "on",
+            "variants": null,
+            "country": "Russia",
+            "city": "b",
+            "newused": "",
+            "type_product": "product",
+            "id_users": "247",
+            "randomn_id": "3997"
         }
     ]
 

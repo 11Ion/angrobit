@@ -1,6 +1,6 @@
 async function fetchUserData() {
     try {
-        const response = await fetch("temp/data.json");
+        const response = await fetch("../../temp/data.json");
         const data = await response.json();
 
         const user = data.users[0]; 

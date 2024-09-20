@@ -21,6 +21,28 @@ window.addEventListener('load', (e) => {
         animatePreview(contentElement, lightElement);
     }
 
+    //open popul
+
+    {
+        const handleDetails = document.getElementById("handleDetails");
+        const popup = document.querySelector(".preview_product");
+        const handleClose = document.querySelector(".button_close");
+        const mask = document.querySelector(".mask");
+        if(handleDetails && popup && handleClose && mask){
+        handleDetails.addEventListener("click", function(){
+            popup.style.display = "flex";
+
+            handleClose.addEventListener("click", function(){
+                popup.style.display = "none";
+            });
+            mask.addEventListener("click", function(){
+                popup.style.display = "none";
+            });
+        });
+    }
+
+    }
+
     const colorUpdate = (color) => {
         switch (color) {
             case 'white':
