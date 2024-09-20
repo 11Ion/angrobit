@@ -169,12 +169,12 @@ window.addEventListener('load', (e) => {
             });
             scene.add(model);
 
-            let clicked = false; // Flag pentru a preveni declanșarea repetată a animației
+            let clicked = false;
 
             canvas.addEventListener("click", () => {
-                if (clicked) return; // Dacă animația este în curs, ieșim din funcție
+                if (clicked) return; 
             
-                clicked = true; // Setăm flag-ul pentru a indica că animația a început
+                clicked = true; 
             
                 model.traverse((child) => {
                     if (child.name === 'RightForeArm_39_44') {
@@ -194,9 +194,9 @@ window.addEventListener('load', (e) => {
                             if (elapsed < totalDuration) {
                                 requestAnimationFrame(animate);
                             } else {
-                                child.rotation.x = startRotation; // Resetăm poziția la final
-                                resetOtherParts(); // Resetăm și celelalte părți
-                                clicked = false; // Resetăm flag-ul pentru a permite noi click-uri
+                                child.rotation.x = startRotation; 
+                                resetOtherParts(); 
+                                clicked = false; 
                             }
                         }
             
@@ -235,7 +235,7 @@ window.addEventListener('load', (e) => {
     controls.minPolarAngle = Math.PI / 2;
     controls.maxPolarAngle = Math.PI / 2;
     controls.enableZoom = false;  
-    // controls.enableRotate = false; // Dezactivează rotația camerei
+    // controls.enableRotate = false; //
     controls.minDistance = 10;  
     controls.maxDistance = 10;
 
@@ -300,15 +300,15 @@ window.addEventListener('load', (e) => {
                         if (child.name === 'Object_68') { 
                             child.material.emissive.set(colorUpdate(color)); 
                         }
-                        if (child.name === 'LeftArm_21_26') { 
+                       // if (child.name === 'LeftArm_21_26') { 
                             // child.rotation.x = Math.PI / 2.7;
                             // animateRotation(child, Math.PI / 3); 
     
-                        }
-                        if (child.name === 'RightArm_40_45') { 
+                        //}
+                        //if (child.name === 'RightArm_40_45') { 
                             // child.rotation.x = Math.PI / 2.7;
                             // animateRotation(child, Math.PI / 3); 
-                        }
+                        //}
 
                     });
                 }
@@ -331,15 +331,15 @@ window.addEventListener('load', (e) => {
                     if (child.name === 'Object_68') { 
                         child.material.emissive.set(colorUpdate(color)); 
                     }
-                    if (child.name === 'LeftArm_21_26') { 
+                    //if (child.name === 'LeftArm_21_26') { 
                         // child.rotation.x = Math.PI / 2.7;
                         // animateRotation(child, Math.PI / 2.7); 
 
-                    }
-                    if (child.name === 'RightArm_40_45') { 
+                    //}
+                    //if (child.name === 'RightArm_40_45') { 
                         // child.rotation.x = Math.PI / 2.7;
                         // animateRotation(child, Math.PI / 2.7); 
-                    }
+                    //}
                 });
             }
             currentIndex = object.getAttribute('data-index');
