@@ -21,7 +21,7 @@ window.addEventListener('load', (e) => {
         animatePreview(contentElement, lightElement);
     }
 
-    //open popul
+    //open popup
 
     {
         const handleDetails = document.getElementById("handleDetails");
