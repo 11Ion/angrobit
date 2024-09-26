@@ -208,6 +208,7 @@ body{
             top: 25%;
             left: 40%;
             transform-origin: 236px 0;
+            // transition: transform 0.1s ease;
             img{
                 width: 100px;
                 height: 100px;
@@ -217,7 +218,7 @@ body{
         .model{
             position: absolute;
             bottom: 0;
-            width: 236px;
+            width: 320px;
             height: 616px;
         }
     }
@@ -568,4 +569,22 @@ body{
             }
         }
     }
+}
+
+#loader_page{
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(270deg, #0d2940 4.9%, #226aa6 50%, #0d2940 95%);
+    &:before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../../assets/images/home/logo.svg");
+        background-size: 400px 387px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
 }

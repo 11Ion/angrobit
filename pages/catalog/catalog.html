@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="../../assets/css/responsive.css">
       <title>AngroBit Shop</title>
    </head>
-   <body>
+   <body id="catalog">
       <div class="wrapper">
 
          <header class="header">
@@ -269,7 +269,8 @@
                       </div>
                       <!-- PRODUCTS -->
                        <div class="products">
-                           <article class="product">
+
+                           <!-- <article class="product">
                               <div class="product_content">
                                  <button class="button_add_to_favorite">
                                     <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
@@ -301,133 +302,48 @@
 
                            </article>
 
-                           <article class="product">
-                              <div class="product_content">
-                                 <button class="button_add_to_favorite">
-                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
-                                 </button>
-                                 <div class="product_image">
-                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
-                                 </div>
-
-                                 <div class="product_colors">
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name2" checked="">
-                                     <span class="check"></span>
-                                   </label>
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name2">
-                                     <span class="check"></span>
-                                   </label>
-                                 </div>
-                                 
-                                 <h2 class="product_name">
-                                    T-shirt
-                                    <div class="shadow"></div>
-                                 </h2>
-                              </div>
-
-                              <button class="button_buy">
-                                 $ 36.02
-                              </button>
-
-                           </article>
-                           <article class="product">
-                              <div class="product_content">
-                                 <button class="button_add_to_favorite">
-                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
-                                 </button>
-                                 <div class="product_image">
-                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
-                                 </div>
-
-                                 <div class="product_colors">
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name3" checked="">
-                                     <span class="check"></span>
-                                   </label>
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name3">
-                                     <span class="check"></span>
-                                   </label>
-                                 </div>
-                                 
-                                 <h2 class="product_name">
-                                    T-shirt
-                                    <div class="shadow"></div>
-                                 </h2>
-                              </div>
-
-                              <button class="button_buy">
-                                 $ 36.02
-                              </button>
-
-                           </article>
-                           <article class="product">
-                              <div class="product_content">
-                                 <button class="button_add_to_favorite">
-                                    <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
-                                 </button>
-                                 <div class="product_image">
-                                    <img src="../../assets/images/home/shirt1.png" alt="T-shirt" />
-                                 </div>
-
-                                 <div class="product_colors">
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name4" checked="">
-                                     <span class="check"></span>
-                                   </label>
-                                   <label class="label">
-                                     <input type="radio" name="color_product_name4">
-                                     <span class="check"></span>
-                                   </label>
-                                 </div>
-                                 
-                                 <h2 class="product_name">
-                                    T-shirt
-                                    <div class="shadow"></div>
-                                 </h2>
-                              </div>
-
-                              <button class="button_buy">
-                                 $ 36.02
-                              </button>
-
-                           </article>
+                         -->
                        </div>
 
                   </div>
              </section>
 
              <!-- SCENE3D -->
+              <div class="model_box">
+               <canvas class="model"></canvas>
+              </div>
               <div class="catalog_preview_model">
-                  <div class="content_details">
+                  <!-- <div class="content_details" id="prod_details">
                      <p class="price">$ 35.02</p>
                      <div class="buttons">
                         <button class="button_details" id="handleDetails">Details</button>
                         <button class="button_buy">Buy</button>
                      </div>
-                  </div>
+                  </div> -->
               </div>
               <div class="ground"></div>
 
-              <!-- TEMP POP-UP PREVIEW PRODUCT -->
-               <div class="preview_product">
+              <!-- TEMP POPUP PREVIEW PRODUCT -->
+               <div class="preview_product" id="preview">
                   <div class="mask"></div>
                   <div class="content" id="content_popup">
                      <button class="button_close">
                            <img src="../../assets/images/catalog/icon_close.svg" alt="close" title="Exit">
                      </button>
                      <div class="left_box">
+                        <div class="box_model_preview">
+                           <canvas class="model2"></canvas>
+                        </div>
                         <div class="bottom_light"></div>
                         <div class="ground"></div>
                         <button class="button_add_to_cart">
                            ADD TO CARD
                         </button>
                      </div>
-                     <div class="right_box">
-                        <div class="product_details_header">
-                           <div class="left_content">
+                     <div class="right_box" id="product_details">
+                        
+                        <div class="product_details_header" id="product_details_header">
+                           <!-- <div class="left_content">
                               <div class="container_image">
                                  <img src="../../assets/images/home/shirt1.png" alt="T-shirt">
                               </div>
@@ -439,10 +355,10 @@
                               <p class="price">$ 35.02</p>
                               <button class="button_buy">buy</button>
                            </div>
-                           <div class="line"></div>
+                           <div class="line"></div> -->
                         </div>
-                        <div class="product_sizing">
-                           <h3 class="title">
+                        <div class="product_sizing" id="product_details_header_sizing">
+                           <!-- <h3 class="title">
                               Size
                            </h3>
                            <div class="sizing_inputs">
@@ -468,10 +384,10 @@
                                  <input type="radio" name="size">
                                  <span class="name"><span class="bg">2XL</span></span>
                               </label>
-                           </div>
+                           </div> -->
                         </div>
-                        <div class="product_description">
-                           <h4 class="title">
+                        <div class="product_description" id="product_details_description">
+                           <!-- <h4 class="title">
                               Description
                            </h4>
                            <div class="content_description">
@@ -479,12 +395,12 @@
                                  <h5 class="title_color">
                                     Color
                                  </h5>
-                                 <ul class="items">
-                                    <li class="item white"></li>
-                                    <li class="item black"></li>
-                                    <li class="item blue"></li>
-                                    <li class="item red"></li>
-                                 </ul>
+                                 <div class="buttons_color">
+                                    <button class="button_color white" data-color="white"></button>
+                                    <button class="button_color black" data-color="black"></button>
+                                    <button class="button_color blue" data-color="blue"></button>
+                                    <button class="button_color red" data-color="red"></button>
+                                 </div>
                               </div>
 
                               <div class="content_material">
@@ -520,13 +436,323 @@
                                     </li>
                                  </ul>
                               </div>
-                           </div>
+                           </div> -->
                         </div>
 
                         
                      </div>
                   </div>
                </div>
+
+              <!-- TEMP POPUP CART -->
+               <div class="cart" id="cart">
+                  <div class="mask" id="mask"></div>
+                  <div class="content">
+                     <div class="header_cart">
+                        <h2 class="title">Billing & Payment</h2>
+                        <div class="buttons">
+                           <button class="button">
+                              <img src="../../assets/images/catalog/icon_cart.svg" alt="Cart">
+                              <span>21</span>
+                           </button>
+                           <button class="button">
+                              <img src="../../assets/images/catalog/icon_heart.svg" alt="Cart">
+                           </button>
+                        </div>
+                     </div>
+                     <div class="box_cart">
+                        <div class="left_box">
+                           <div class="cart_summary">
+                              <h3>Check your cart</h3>
+                              <div class="set_items">
+                                 <p>All items <span>(0)</span></p>
+                                 <input type="checkbox" id="selectAll">
+                              </div>
+                           </div>
+
+                           <ul class="cart_items">
+                              <!-- <li class="cart_item">
+                                 <div class="cart_item_left_box">
+                                    <div class="cart_item_set">
+                                       <input type="checkbox" class="select_product" name="name_product_id">
+                                    </div>
+                                    <div class="cart_item_image">
+                                       <img src="../../assets/images/home/shirt1.png" alt="Product Name">
+                                    </div>
+                                    <div class="cart_item_details">
+                                       <p class="name">T-shirt</p>
+
+                                       <div class="cart_item_size">
+                                          <select name="" id="">
+                                             <option value="">XS</option>
+                                             <option value="">S</option>
+                                             <option value="">M</option>
+                                             <option value="">L</option>
+                                             <option value="">XL</option>
+                                             <option value="">2XL</option>
+
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="cart_item_right_box">
+                                    <p class="cart_item_price">
+                                       $ 32.02
+                                    </p>
+                                    <div class="cart_item_settings">
+                                       <label for="selectQty">
+                                          Qty:
+                                          <select name="select_qty" id="selectQty">
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="3">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                             <option value="7">7</option>
+                                             <option value="8">8</option>
+                                             <option value="9">9</option>
+                                          </select>
+                                       </label>
+                                       <button class="button">
+                                             <img src="../../assets/images/catalog/icon_heart.svg" alt="Favorite">
+                                       </button>
+                                       <button class="button">
+                                          <img src="../../assets/images/catalog/icon_trash.svg" alt="Remove">
+                                       </button>
+
+                                    </div>
+                                 </div>
+                              </li> -->
+                           </ul>
+
+                           <div class="address">
+                              <h4 class="title">Billing address</h4>
+                              <div class="box_address" id="address_container">
+                                 <!-- 
+                                 <div class="current_address">
+                                    <div class="top_content">
+                                       <p class="user_name"><span class="firstname">Akuna</span> <span class="lastname">Matatkina</span></p>
+                                       <p class="user_phone">+37368459004</p>
+                                    </div>
+                                    <div class="bottom_content">
+                                       <p class="user_street">Strada Madagascar 69</p>
+                                       <p class="user_city">New York Moldovnesk</p>
+                                       <p class="user_country">
+                                          <span class="flag"></span>
+                                          Austria
+                                       </p>
+                                    </div>
+                                 </div> -->
+
+                                 <button class="button" id="add_address_button">
+                                    + Add to address
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="right_box">
+                           <div class="discound_code">
+                              <h4 class="discound_code_title">Discount code</h4>
+
+                              <form class="discound_form" action="" method="POST">
+                                 <div class="discound_form_group">
+                                    <input type="text">
+                                    <button class="button_appy_discound" type="submit">Apply</button>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="order_summary">
+                              <h4 class="order_summary_title">Order Summary</h4>
+                              <p><span>Subtotal</span> <span>$36.02</span></p>
+                              <p><span>Service fee</span> <span>$14.05</span></p>
+                              <p><span>Tax included</span> <span>$7.00</span></p>
+                           </div>
+                           <div class="order_total">
+                              <p><span>Total</span> <span>$ 57.07</span></p>
+                           </div>
+                           <button class="button" id="btn_buy">
+                              Checkout now
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- TEMP ADRESS POPUP -->
+                <div class="address_popup">
+                  <div class="mask" id="mask_adress"></div>
+                     <div class="content">
+                           <button class="close_button" id="close_adress">
+                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g filter="url(#filter0_d_3_9734)">
+                                   <path fill-rule="evenodd" clip-rule="evenodd" d="M6.55799 2.10961L4.37199 4.16422L8.48121 8.53621L4.10922 12.6454L6.16383 14.8314L10.5358 10.7222L14.645 15.0942L16.831 13.0396L12.7218 8.6676L17.0938 4.55838L15.0392 2.37238L10.6672 6.4816L6.55799 2.10961Z" fill="white" />
+                                 </g>
+                                 <defs>
+                                   <filter id="filter0_d_3_9734" x="0.109375" y="0.109375" width="20.9844" height="20.9844" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                     <feOffset dy="2" />
+                                     <feGaussianBlur stdDeviation="2" />
+                                     <feComposite in2="hardAlpha" operator="out" />
+                                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_9734" />
+                                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_9734" result="shape" />
+                                   </filter>
+                                 </defs>
+                               </svg>
+                           </button>
+                        <h4 class="header_adress">
+                           Address
+                        </h4>
+                        <p class="title">
+                           Add address
+                        </p>
+                        <form class="form" id="add_adress">
+                           <div class="form_add_adress">
+                              <label class="input_adress_group">
+                                 <span>Fist name</span>
+                                 <input id="firstname" type="text">
+                              </label>
+                              <label class="input_adress_group">
+                                 <span>Second name</span>
+                                 <input id="secondname" type="text">
+                              </label>
+                              <label class="input_adress_group">
+                                 <span>Street address</span>
+                                 <input id="street_address" type="text">
+                              </label>
+                              <label class="input_adress_group">
+                                 <span>Phone</span>
+                                 <input id="phone" type="text">
+                              </label>
+                              <label class="input_adress_group">
+                                 <span>City</span>
+                                 <input id="city" type="text">
+                              </label>
+                              <label class="input_adress_group">
+                                 <span>Postal code</span>
+                                 <input id="postal_code" type="text">
+                              </label>
+
+                              <label class="input_adress_group">
+                                 <span>Country</span>
+                                 <select name="" id="country">
+                                    <option value="Moldova" checked>Moldova</option>
+                                 </select>
+                              </label>
+                             
+                           </div>
+                           <div class="input_group_checkbox">
+                              <input type="checkbox" id="save_default" class="">
+                              <span>Save as defaut</span>
+                           </div>
+                              <div class="button_group">
+                                 <button class="button_save_adress">
+                                    Add 
+                                 </button>
+                              </div>
+                        </form>
+                     </div>
+                </div>
+
+               <!-- TEMP CARD POPUP -->
+                <div class="checkout_popup">
+                  <div class="mask" id="mask_buy"></div>
+                  <div class="content">
+                     <button class="button" id="btn_checkout_close">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <g filter="url(#filter0_d_3_9824)">
+                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6.55799 2.10961L4.37199 4.16422L8.48121 8.53621L4.10922 12.6454L6.16383 14.8314L10.5358 10.7222L14.645 15.0942L16.831 13.0396L12.7218 8.6676L17.0938 4.55838L15.0392 2.37238L10.6672 6.4816L6.55799 2.10961Z" fill="white" />
+                           </g>
+                           <defs>
+                             <filter id="filter0_d_3_9824" x="0.109375" y="0.109375" width="20.9844" height="20.9844" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                               <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                               <feOffset dy="2" />
+                               <feGaussianBlur stdDeviation="2" />
+                               <feComposite in2="hardAlpha" operator="out" />
+                               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_9824" />
+                               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_9824" result="shape" />
+                             </filter>
+                           </defs>
+                         </svg>
+                     </button>
+                     <h4 class="header_checkout">
+                        Card
+                     </h4>
+                     <div class="box">
+                        <div class="left_box">
+                           <label>
+                              <span>Please select a payment method</span>
+                              <select name="payment_method" id="payment_method">
+                                 <option value="Visa">Visa</option>
+                                 <option value="MasterCard">MasterCard</option>
+                                 <option value="PayPal">PayPal</option>
+                              </select>
+                           </label>
+                           <label for="cnn">
+                              <span>Card number</span>
+                              <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+                                 autocomplete="cc-number" maxlength="19" 
+                                 placeholder="xxxx xxxx xxxx xxxx" required>
+                           </label>
+
+
+                        </div>
+                        <div class="right_box">
+                           <label for="exp-date">
+                              <span>Expiration Date</span>
+                              <input id="exp-date" type="text" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/([0-9]{2})"
+                                    maxlength="5" placeholder="MM/YY" autocomplete="cc-exp" required>
+                           </label>
+
+                           <label for="cvv">
+                              <span>CVV</span>
+                              <input id="cvv" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" 
+                                    maxlength="4" placeholder="CVV" autocomplete="cc-csc" required>
+                           </label>
+
+                        </div>
+                     </div>
+
+                  </div>
+                </div>
+
+                <!-- TEMP POPUP SIZONG TYPE PRODUCT -->
+                <div class="sizing_popup">
+                  <!-- <div class="container_sizing">
+                     <p>Sizing: <span class="type_product">TypeProduct</span></p>
+                     <label class="label_sizing">
+                        <span>XS</span>
+                        <input name="type_prodcut_size" type="radio" value="XS">
+                    </label>
+                    <label class="label_sizing">
+                     <span>S</span>
+                     <input name="type_prodcut_size" type="radio" value="S">
+                   </label>
+                   <label class="label_sizing">
+                     <span>M</span>
+                     <input name="type_prodcut_size" type="radio" value="M">
+                   </label>
+                   <label class="label_sizing">
+                     <span>L</span>
+                     <input name="type_prodcut_size" type="radio" value="L">
+                   </label>
+                   <label class="label_sizing">
+                     <span>XL</span>
+                     <input name="type_prodcut_size" type="radio" value="XL">
+                   </label>
+                   <label class="label_sizing">
+                     <span>2XL</span>
+                     <input name="type_prodcut_size" type="radio" value="2XL">
+                   </label>
+                  </div> -->
+                </div>
+
+
          </main>
       </div>
       <script src="../../assets/js/api.js"></script>
