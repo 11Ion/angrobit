@@ -618,20 +618,4 @@ body .wrapper {
   background: rgba(73, 169, 225, 0.5);
   mix-blend-mode: plus-lighter;
   filter: blur(12.8999996185px);
-}
-#loader_page {
-  display: block;
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: linear-gradient(270deg, #0d2940 4.9%, #226aa6 50%, #0d2940 95%);
-}
-#loader_page:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../../assets/images/home/logo.svg");
-  background-size: 400px 387px;
-  background-repeat: no-repeat;
-  background-position: center;
 }/*# sourceMappingURL=main.css.map */

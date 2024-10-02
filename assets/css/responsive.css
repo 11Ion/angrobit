@@ -1,0 +1,37 @@
+@media screen and (max-height: 750px) {
+  .header {
+    min-height: 650px;
+  }
+  .header .items {
+    gap: 10px;
+  }
+}
+@media screen and (max-height: 680px) {
+  .header {
+    min-height: 580px;
+    padding: 25px 15px 25px 15px;
+  }
+  .header .nav_search {
+    margin-top: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .header .nav_search a svg {
+    width: 17px;
+    height: 17px;
+  }
+  .header .items {
+    gap: 5px;
+  }
+  .header .items .item a .icon {
+    width: 45px;
+    height: 45px;
+  }
+  .header .items .item a .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .header .item_game a svg {
+    width: 45px;
+  }
+}/*# sourceMappingURL=responsive.css.map */

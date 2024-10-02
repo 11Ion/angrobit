@@ -185,13 +185,11 @@ function updatePreviewProduct(productPrice) {
     let previewContainer = document.querySelector(".catalog_preview_model");
 
     if (previewContainer) {
-        previewContainer.innerHTML = ""; // Curățăm conținutul existent
+        previewContainer.innerHTML = "";
 
-        // Creăm un nou element pentru detalii
         const previewDetailsContainer = document.createElement("div");
         previewDetailsContainer.classList.add("content_details");
         
-        // Adăugăm conținutul dorit
         previewDetailsContainer.innerHTML = `
             <p class="price">$ ${productPrice}</p>
             <div class="buttons">
@@ -200,7 +198,6 @@ function updatePreviewProduct(productPrice) {
             </div>
         `;
 
-        // Adăugăm detalii în previewContainer
         previewContainer.appendChild(previewDetailsContainer);
     }
 };

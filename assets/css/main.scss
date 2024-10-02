@@ -716,20 +716,3 @@
     }
   }
   
-  #loader_page {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: linear-gradient(270deg, #0d2940 4.9%, #226aa6 50%, #0d2940 95%);
-    &:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("../../assets/images/home/logo.svg");
-      background-size: 400px 387px;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
-  
