@@ -194,7 +194,18 @@
                         </label>
                      </div>
                      <div class="range">
-                        <input type="range">
+                        <div class="group">
+                           <div class="progress"></div>
+                           <div class="range-input">
+                             <input type="range" class="range-min" min="0" max="2000" value="0" step="1">
+                             <input type="range" class="range-max" min="0" max="2000" value="2000" step="1">
+                           </div>
+                           <div class="text-range">
+                             <div class="text-min">0</div>
+                             <div class="text-max">2000</div>
+                           </div>
+                     </div>
+
                      </div>
                      <div class="color_box">
                         <p class="name_filter">Color</p>
